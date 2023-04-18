@@ -1,13 +1,13 @@
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { init } from 'dc-visualization-sdk';
 
-import * as appComponents from '../components';
+import { Banner, Carousel, Markdown } from '../components';
 
 const componentLookup = {
-  'https://get-started-dashboard.com/banner-carousel': 'Carousel',
-  'https://get-started-dashboard.com/banner-schema': 'Banner',
-  'https://get-started-dashboard.com/hello-world-schema': 'Markdown',
+  'https://get-started-dashboard.com/banner-carousel': Carousel,
+  'https://get-started-dashboard.com/banner-schema': Banner,
+  'https://get-started-dashboard.com/hello-world-schema': Markdown,
 };
 
 export const Page = () => {
@@ -15,50 +15,23 @@ export const Page = () => {
     query: { vse, content, locale },
   } = useRouter();
 
-  const [hubData, setHubData] = useState(null);
-  const [component, setComponent] = useState(null);
+  const [itemContent, setItemContent] = useState(null);
+
+  const readSdk = async () => {
+    const sdk = await init();
+    const form = await sdk.form.get();
+    const { content: respContent } = form;
+
+    setItemContent(respContent);
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const urlParamsArr = ['depth=all', 'format=inlined'];
-
-      if (locale) {
-        urlParamsArr.push('locale=${locale}');
-      }
-
-      const url = `https://${vse}/content/id/${content}?${urlParamsArr.join(
-        '&'
-      )}`;
-      const {
-        data: { content: respContent },
-      } = await axios.get(url);
-
-      setHubData(respContent);
-
-      const {
-        _meta: { schema },
-      } = respContent;
-
-      const component = Object.keys(componentLookup).find((item) =>
-        // inverse comparison for development purposes
-        schema.includes(item)
-      );
-
-      setComponent(componentLookup[component]);
-    };
-
-    if (vse && content) {
-      fetchData();
-    }
+    readSdk();
   }, [vse, content, locale]);
 
-  const Component = appComponents[component];
+  const Component = componentLookup[itemContent?._meta?.schema];
 
-  return !Component ? null : (
-    <>
-      <Component {...hubData} />
-    </>
-  );
+  return !Component ? null : <Component {...itemContent} />;
 };
 
 export default Page;
