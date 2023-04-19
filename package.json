@@ -1,4 +1,6 @@
 {
+  "name": "dc-visualization-get-started",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -7,7 +9,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.10.6",
-    "axios": "^1.3.4",
+    "dc-visualization-sdk": "^1.1.0",
     "lodash": "^4.17.21",
     "markdown-to-jsx": "^7.2.0",
     "next": "latest",
