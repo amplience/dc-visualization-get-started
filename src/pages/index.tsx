@@ -12,7 +12,7 @@ const componentLookup = {
 
 export const Page = () => {
   const {
-    query: { vse, id, locale, hub, live },
+    query: { vse, content, locale, hub, live },
   } = useRouter();
 
   const [itemContent, setItemContent] = useState(null);
@@ -24,7 +24,7 @@ export const Page = () => {
       }
 
       const contentItem = await ContentItemService.fetchItem({
-        id,
+        id: content,
         hub,
         live,
         locale,
@@ -36,7 +36,7 @@ export const Page = () => {
 
   useEffect(() => {
     getContentItem();
-  }, [vse, id, locale]);
+  }, [vse, content, locale]);
 
   const Component = componentLookup[itemContent?._meta?.schema];
 

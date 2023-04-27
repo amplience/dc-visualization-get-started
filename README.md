@@ -8,7 +8,7 @@ To use this visualization app it first needs to be added to a content type insid
 
 The capabilities of this app depend on the URL parameters supplied.
 
-- `id` - The Content Item ID {{content.sys.id}}. Required.
+- `content` - The Content Item ID {{content.sys.id}}. Required.
 - `vse` - Your virtual staging environment {{vse.domain}}. Optional, depending on `live` value
 - `hub` - Your hub name {{hub.name}}. Optional, depending on `live` value
 - `locale` - The locale to use {{locales}}. This is not needed when using a realtime connection and exluding this will prevent unnecessary reloading.
