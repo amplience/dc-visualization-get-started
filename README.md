@@ -8,9 +8,11 @@ To use this visualization app it first needs to be added to a content type insid
 
 The capabilities of this app depend on the URL parameters supplied.
 
-- `content` - The Content Item ID {{content.sys.id}}. Required for staging, live and diff tabs.
-- `vse` - Your virtual staging environment {{vse.domain}}. Required for the staging tab.
+- `content` - The Content Item ID {{content.sys.id}}. Required.
+- `vse` - Your virtual staging environment {{vse.domain}}. Optional, depending on `live` value
+- `hub` - Your hub name {{hub.name}}. Optional, depending on `live` value
 - `locale` - The locale to use {{locales}}. This is not needed when using a realtime connection and exluding this will prevent unnecessary reloading.
+- `live` - When set to true ampliance cdn with provided `hub` will be used for getting content, otherwise `vse` will be used
 
 ### Example URL to use:
 
