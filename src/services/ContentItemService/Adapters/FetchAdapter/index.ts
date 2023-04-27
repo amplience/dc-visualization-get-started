@@ -27,6 +27,14 @@ class FetchAdapter implements DataAdapter {
       return undefined;
     }
   }
+
+  listenForChanges() {
+    // not implemented
+  }
+
+  disposeListeners() {
+    // nothing to dispose in this adapter
+  }
 }
 
 export default new FetchAdapter();

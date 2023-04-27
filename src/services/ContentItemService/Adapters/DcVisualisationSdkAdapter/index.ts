@@ -1,12 +1,18 @@
 import { isInIframe } from '../../../../utils/isInIframe';
-import { DataAdapter } from '../../types';
-import { VisualizationSDK, init } from 'dc-visualization-sdk';
+import { DataAdapter, StateUpdater } from '../../types';
+import {
+  ModelChangeDispose,
+  VisualizationSDK,
+  init,
+} from 'dc-visualization-sdk';
 
 class DcVisualisationSdkAdapter implements DataAdapter {
   sdk: VisualizationSDK;
+  disposer: ModelChangeDispose | undefined;
 
   constructor() {
     this.sdk = undefined;
+    this.disposer = undefined;
   }
 
   async init() {
@@ -30,6 +36,20 @@ class DcVisualisationSdkAdapter implements DataAdapter {
     }
 
     return this.sdk.form.get();
+  }
+
+  listenForChanges(stateUpdater: StateUpdater) {
+    if (!this.sdk) {
+      throw new Error('Service not initialized');
+    }
+
+    this.disposer = this.sdk.form.changed((data) => stateUpdater(data.content));
+  }
+
+  disposeListeners() {
+    if (this.disposer) {
+      this.disposer();
+    }
   }
 }
 

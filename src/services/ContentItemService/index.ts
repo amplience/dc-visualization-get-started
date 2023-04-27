@@ -1,7 +1,12 @@
 import { findAsync } from '../../utils/findAsync';
 import DcVisualisationSdkAdapter from './Adapters/DcVisualisationSdkAdapter';
 import FetchAdapter from './Adapters/FetchAdapter';
-import { DataAdapter, FetchProps, FetchPropsNoArrays } from './types';
+import {
+  DataAdapter,
+  FetchProps,
+  FetchPropsNoArrays,
+  StateUpdater,
+} from './types';
 
 const adapters: DataAdapter[] = [DcVisualisationSdkAdapter, FetchAdapter];
 
@@ -36,6 +41,16 @@ class ContentItemService {
     }
 
     return await this.dataAdapter.fetchItem(fetchProps as FetchPropsNoArrays);
+  }
+
+  listenForChanges(stateUpdater: StateUpdater) {
+    this.dataAdapter.listenForChanges(stateUpdater);
+  }
+
+  disposeListeners() {
+    if (this.dataAdapter) {
+      this.dataAdapter.disposeListeners();
+    }
   }
 }
 
