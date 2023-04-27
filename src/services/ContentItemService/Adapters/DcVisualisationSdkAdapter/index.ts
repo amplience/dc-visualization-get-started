@@ -1,3 +1,4 @@
+import { isInIframe } from '../../../../utils/isInIframe';
 import { DataAdapter } from '../../types';
 import { VisualizationSDK, init } from 'dc-visualization-sdk';
 
@@ -10,11 +11,7 @@ class DcVisualisationSdkAdapter implements DataAdapter {
 
   async init() {
     try {
-      const parent = window.parent;
-
-      // check if application is displayed in an iframe
-      // as only then dc-visualisation-sdk can work
-      if (!parent || window === parent) return false;
+      if (!isInIframe()) return false;
 
       const sdk = await init();
 

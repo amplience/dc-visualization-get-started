@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import { Banner, Carousel, Markdown } from '../components';
-import ContentItemService from '../services/ContentItemService';
+import contentItemService from '../services/ContentItemService';
 
 const componentLookup = {
   'https://get-started-dashboard.com/banner-carousel': Carousel,
@@ -19,11 +19,11 @@ export const Page = () => {
 
   const getContentItem = async () => {
     try {
-      if (!ContentItemService.initialized) {
-        await ContentItemService.init();
+      if (!contentItemService.initialized) {
+        await contentItemService.init();
       }
 
-      const contentItem = await ContentItemService.fetchItem({
+      const contentItem = await contentItemService.fetchItem({
         id: content,
         hub,
         live,
