@@ -14,7 +14,7 @@ The capabilities of this app depend on the URL parameters supplied.
 
 ### Example URL to use:
 
-http://localhost:3000?content={{content.sys.id}}&vse={{vse.domain}}
+https://get-started.visualizations.content.amplience.net?content={{content.sys.id}}&vse={{vse.domain}}
 
 ## Running locally
 
