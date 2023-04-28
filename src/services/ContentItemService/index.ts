@@ -44,12 +44,12 @@ class ContentItemService {
   }
 
   listenForChanges(stateUpdater: StateUpdater) {
-    this.dataAdapter.listenForChanges(stateUpdater);
+    this.dataAdapter.listenForChanges?.(stateUpdater);
   }
 
   disposeListeners() {
     if (this.dataAdapter) {
-      this.dataAdapter.disposeListeners();
+      this.dataAdapter.disposeListeners?.();
     }
   }
 }

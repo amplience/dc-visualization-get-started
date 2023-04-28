@@ -23,6 +23,6 @@ export interface DataAdapter {
   fetchItem: (
     fetchProps: FetchPropsNoArrays
   ) => Promise<CDv2Response<Record<string, any>>>;
-  listenForChanges: (stateUpdater: StateUpdater) => void;
-  disposeListeners: VoidFunction;
+  listenForChanges?: (stateUpdater: StateUpdater) => void;
+  disposeListeners?: VoidFunction;
 }
