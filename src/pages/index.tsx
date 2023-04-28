@@ -31,12 +31,21 @@ export const Page = () => {
         vse,
       });
       setItemContent(contentItem.content);
-    } catch (error) {}
+      contentItemService.listenForChanges(setItemContent);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
+    if (content === undefined) return;
+
     getContentItem();
-  }, [vse, content, locale]);
+
+    return () => {
+      contentItemService.disposeListeners();
+    };
+  }, [vse, content, locale, hub, live]);
 
   const Component = componentLookup[itemContent?._meta?.schema];
 
