@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react';
+import styled from '@emotion/styled';
 
 type ImageProps = {
   className: string;
@@ -25,7 +25,6 @@ export const BannerWrapper = styled.div<ImageProps>`
       font-size: 3rem;
       line-height: 3rem;
       font-weight: 700;
-      text-transform: capitalize;
       color: #fff;
     }
 
