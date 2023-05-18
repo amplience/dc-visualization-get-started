@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React from "react";
+import styled from "@emotion/styled";
 
 type ImageProps = {
   className: string;
@@ -42,7 +42,7 @@ export const BannerWrapper = styled.div<ImageProps>`
   .githubButton {
     width: 177px;
     height: 32px;
-    font-family: 'IBM Plex Sans';
+    font-family: "IBM Plex Sans";
     font-style: normal;
     font-weight: 700;
     font-size: 14px;

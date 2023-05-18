@@ -12,7 +12,7 @@ export const Banner: FC<BannerComponent> = (props) => {
     background,
     strapline,
     headline,
-    link: { url, title },
+    link: { url, title }
   } = props;
 
   return (
