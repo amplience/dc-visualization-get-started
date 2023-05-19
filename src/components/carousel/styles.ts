@@ -4,7 +4,6 @@ export const CarouselContainer = styled.div`
   .carousel,
   .slider {
     width: 100%;
-    max-height: 500px;
     overflow: hidden;
     position: relative;
 
@@ -43,11 +42,11 @@ export const CarouselContainer = styled.div`
     }
 
     .backButton {
-      left: 0;
+      left: 30px;
     }
 
     .nextButton {
-      right: 0;
+      right: 30px;
     }
 
     nav {
@@ -62,14 +61,26 @@ export const CarouselContainer = styled.div`
     }
 
     .slideInner,
+    .slider,
     .carousel__inner-slide {
-      max-height: 488px;
+      max-height: 320px;
     }
 
-    @media only screen and (max-width: 640px) {
+    @media only screen and (min-width: 640px) {
+      .carousel,
+      .slider,
       .slideInner,
       .carousel__inner-slide {
         max-height: 488px;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      .carousel,
+      .slider,
+      .slideInner,
+      .carousel__inner-slide {
+        max-height: 500px;
       }
     }
   }
