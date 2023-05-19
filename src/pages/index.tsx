@@ -6,7 +6,7 @@ import contentItemService from '../services/ContentItemService';
 
 const componentLookup = {
   'https://schema-examples.com/banner-carousel': Carousel,
-  'https://https://schema-examples.com/tutorial-banner': Banner,
+  'https://schema-examples.com/tutorial-banner': Banner,
   'https://get-started-dashboard.com/hello-world-schema': Markdown
 };
 
