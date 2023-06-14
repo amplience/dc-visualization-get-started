@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
 
 export const CarouselContainer = styled.div`
-  
-  .carousel, .slider{
+  .carousel,
+  .slider {
     width: 100%;
-    max-height: 500px;
     overflow: hidden;
     position: relative;
 
@@ -31,7 +30,8 @@ export const CarouselContainer = styled.div`
       }
     }
 
-    .backButton, .nextButton{
+    .backButton,
+    .nextButton {
       width: 25px;
       height: 25px;
       position: absolute;
@@ -41,25 +41,47 @@ export const CarouselContainer = styled.div`
       border: 1px solid #ccc;
     }
 
-    .backButton{
-      left: 0;
+    .backButton {
+      left: 30px;
     }
 
-    .nextButton{
-      right: 0;
+    .nextButton {
+      right: 30px;
     }
 
-    nav{
+    nav {
       position: absolute;
       bottom: 1rem;
       left: 50%;
       transform: translate(-50%, 0);
-      
-      button{
+
+      button {
         margin: 2px;
       }
     }
+
+    .slideInner,
+    .slider,
+    .carousel__inner-slide {
+      max-height: 320px;
+    }
+
+    @media only screen and (min-width: 640px) {
+      .carousel,
+      .slider,
+      .slideInner,
+      .carousel__inner-slide {
+        max-height: 488px;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      .carousel,
+      .slider,
+      .slideInner,
+      .carousel__inner-slide {
+        max-height: 500px;
+      }
+    }
   }
-  
-  
 `;
