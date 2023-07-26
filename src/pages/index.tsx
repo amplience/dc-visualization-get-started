@@ -7,9 +7,12 @@ import contentItemService from '../services/ContentItemService';
 const componentLookup = {
   'https://get-started-dashboard.com/banner-carousel': Carousel,
   'https://schema-examples.com/banner-carousel': Carousel,
+  'https://amplience-examples.com/carousel': Carousel,
   'https://get-started-dashboard.com/banner-schema': Banner,
   'https://schema-examples.com/tutorial-banner': Banner,
-  'https://get-started-dashboard.com/hello-world-schema': Markdown
+  'https://amplience-examples.com/banner': Banner,
+  'https://get-started-dashboard.com/hello-world-schema': Markdown,
+  'https://amplience-examples.com/hello-world': Markdown,
 };
 
 export const Page = () => {
