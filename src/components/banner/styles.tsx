@@ -39,17 +39,6 @@ export const BannerWrapper = styled.div<ImageProps>`
   }
 
   .githubButton {
-    width: 190px;
-    height: 32px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    background: #efefef;
-    border-radius: 4px;
     text-decoration: none;
     position: absolute;
     right: 30px;

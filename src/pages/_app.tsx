@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import "./index.css";
+import '../components/githubButton/styles.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

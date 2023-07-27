@@ -53,24 +53,7 @@ export const MarkdownWrapper = styled.div`
     right: 30px;
     top: 34px;
     text-decoration: none;
-  }
-
-  .githubButton {
-    width: 190px;
-    height: 32px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    background: #efefef;
-    border-radius: 4px;
-    justify-content: center;
-  }
-
-  
+  }  
 
   .pendingContent {
     text-align: center;
