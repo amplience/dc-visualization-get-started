@@ -2,7 +2,7 @@ import { FC, HTMLAttributes } from 'react';
 
 import MarkdownJsx from 'markdown-to-jsx';
 
-import { MarkdownWrapper } from './styles';
+import { MarkdownWrapper, buttonStyles } from './styles';
 import { GithubButton } from '../githubButton/githubButton';
 
 export type MarkdownProps = {
@@ -17,7 +17,7 @@ export const Markdown: FC<MarkdownProps> = (props) => {
     <Wrapper>
       <div className="wrapper">
         <MarkdownJsx>{text}</MarkdownJsx>
-        <GithubButton />
+        <GithubButton style={buttonStyles} />
       </div>
     </Wrapper>
   );

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { CSSProperties } from "react";
 
 export const MarkdownWrapper = styled.div`
   .wrapper {
@@ -20,6 +21,10 @@ export const MarkdownWrapper = styled.div`
       margin-left: 12px;
     }
 
+    a {
+      width: 190px;
+    }
+
     @media only screen and (max-width: 1024px) {
       .githubButton {
         left: 30px;
@@ -29,6 +34,10 @@ export const MarkdownWrapper = styled.div`
     }
   
     @media only screen and (max-width: 640px) {
+      a {
+        width: 32px;
+      }
+
       .githubButton {
         width: 33px;
         height: 32px;
@@ -72,3 +81,6 @@ export const MarkdownWrapper = styled.div`
     }
   }
 `;
+
+
+export const buttonStyles: CSSProperties = { position: 'absolute' };

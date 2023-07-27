@@ -1,5 +1,4 @@
 .githubButton {
-  width: 190px;
   height: 32px;
   font-style: normal;
   font-weight: 700;
@@ -11,4 +10,6 @@
   background: #efefef;
   border-radius: 4px;
   justify-content: center;
+  align-items: center;
 };
+

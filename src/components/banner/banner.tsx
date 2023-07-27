@@ -23,7 +23,7 @@ export const Banner: FC<BannerComponent> = (props) => {
         {headline && <h1>{headline}</h1>}
         {strapline && <p className={"subheader"}>{strapline}</p>}
       </aside>
-      <GithubButton />
+      <GithubButton style={{ position: "absolute" }} />
       {url && title && (
         <div className="button">
           <a href={url} title={title} className={"link"}>
