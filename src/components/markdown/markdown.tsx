@@ -1,9 +1,9 @@
-import { FC, HTMLAttributes, ReactNode } from 'react';
+import { FC, HTMLAttributes } from 'react';
 
 import MarkdownJsx from 'markdown-to-jsx';
-import { useRouter } from 'next/router';
 
-import { MarkdownWrapper } from './styles';
+import { MarkdownWrapper, buttonStyles } from './styles';
+import { GithubButton } from '../githubButton/githubButton';
 
 export type MarkdownProps = {
   Wrapper: FC<HTMLAttributes<HTMLDivElement>>;
@@ -15,7 +15,10 @@ export const Markdown: FC<MarkdownProps> = (props) => {
 
   return (
     <Wrapper>
-      <MarkdownJsx>{text}</MarkdownJsx>
+      <div className="wrapper">
+        <MarkdownJsx>{text}</MarkdownJsx>
+        <GithubButton style={buttonStyles} />
+      </div>
     </Wrapper>
   );
 };

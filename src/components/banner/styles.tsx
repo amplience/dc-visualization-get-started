@@ -38,18 +38,7 @@ export const BannerWrapper = styled.div<ImageProps>`
     }
   }
 
-  .githubButton {
-    width: 190px;
-    height: 32px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    background: #efefef;
-    border-radius: 4px;
+  a {
     text-decoration: none;
     position: absolute;
     right: 30px;
@@ -65,7 +54,8 @@ export const BannerWrapper = styled.div<ImageProps>`
   }
 
   @media only screen and (max-width: 1024px) {
-    .githubButton {
+    a {
+      width: 190px;
       justify-content: center;
       left: 30px;
       bottom: 30px;
@@ -80,12 +70,12 @@ export const BannerWrapper = styled.div<ImageProps>`
   }
 
   @media only screen and (max-width: 640px) {
-    .githubButton {
+    a {
       width: 33px;
       height: 32px;
       justify-content: center;
     }
-    .githubButton svg {
+    a svg {
       margin-left: 0;
     }
     .buttonText {
@@ -162,10 +152,52 @@ export const BannerWrapper = styled.div<ImageProps>`
   .button {
     background: rgba(26, 34, 45, 0.75);
     border-radius: 25px;
-    position: absolute;
-    bottom: 28px;
+    position: relative;
+    margin-left: auto;
+    margin-top: -2.4rem;
     right: 30px;
-    padding: 12px;
+    padding: 0;
+    width: 322px;
+    display: flex;
+    height: 38px;
+    bottom: 28px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button .link {
+    display: flex;
+    position: absolute;
+    font-size: 1.25rem;
+    width: 305px;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  @media only screen and (max-width: 640px) {
+    .button { 
+      width: 270px;
+      height: 30px;
+      bottom: 22px;
+    }
+    .button .link {
+      width: 270px;
+      font-size: 1rem;
+    }
+    .link {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .link span {
+      margin-left: 8px;
+    }
   }
 
   .link {
@@ -179,16 +211,8 @@ export const BannerWrapper = styled.div<ImageProps>`
     align-items: center;
 
     span {
-      margin-left: 8px;
       display: flex;
       align-items: center;
-    }
-  }
-
-  @media only screen and (max-width: 640px) {
-    .link {
-      font-size: 14px;
-      line-height: 18px;
     }
   }
 `;

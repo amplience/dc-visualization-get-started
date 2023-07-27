@@ -4,7 +4,8 @@ import { DynamicImage } from "../dynamicImage/dynamicImage";
 
 import { BannerWrapper } from "./styles";
 import { BannerComponent } from "./type";
-import { GitHubIcon, ArrowIcon } from "./consts";
+import { ArrowIcon } from "./consts";
+import { GithubButton } from "../githubButton/githubButton";
 
 export const Banner: FC<BannerComponent> = (props) => {
   const {
@@ -22,12 +23,7 @@ export const Banner: FC<BannerComponent> = (props) => {
         {headline && <h1>{headline}</h1>}
         {strapline && <p className={"subheader"}>{strapline}</p>}
       </aside>
-      <a href="https://github.com/amplience/dc-visualization-get-started">
-        <div className={"githubButton"}>
-          <span>{GitHubIcon}</span>
-          <span className={"buttonText"}>Fork me on Github!</span>
-        </div>
-      </a>
+      <GithubButton style={{ position: "absolute" }} />
       {url && title && (
         <div className="button">
           <a href={url} title={title} className={"link"}>
