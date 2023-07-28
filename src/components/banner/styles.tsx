@@ -29,7 +29,7 @@ export const BannerWrapper = styled.div<ImageProps>`
     }
 
     .subheader {
-      font-size: 1.6rem;
+      font-size: 1.25rem;
       color: #fff;
     }
     a {
@@ -88,6 +88,14 @@ export const BannerWrapper = styled.div<ImageProps>`
         font-size: 24px;
       }
     }
+
+    .text {
+      width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.875rem;
+    }
   }
 
   display: grid;
@@ -125,7 +133,7 @@ export const BannerWrapper = styled.div<ImageProps>`
     aside {
       h1 {
         font-size: 36px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
       }
       .subheader {
         font-size: 20px;
@@ -138,12 +146,10 @@ export const BannerWrapper = styled.div<ImageProps>`
       padding: 28px 24px;
       h1 {
         font-size: 24px;
-        width: 245px;
         line-height: 30px;
       }
       .subheader {
         font-size: 14px;
-        width: 226px;
         line-height: 18px;
       }
     }
@@ -182,12 +188,12 @@ export const BannerWrapper = styled.div<ImageProps>`
 
   @media only screen and (max-width: 640px) {
     .button { 
-      width: 270px;
+      width: 200px;
       height: 30px;
       bottom: 22px;
     }
     .button .link {
-      width: 270px;
+      width: 180px;
       font-size: 1rem;
     }
     .link {

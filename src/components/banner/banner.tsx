@@ -27,7 +27,7 @@ export const Banner: FC<BannerComponent> = (props) => {
       {url && title && (
         <div className="button">
           <a href={url} title={title} className={"link"}>
-            {title}
+            <div className={"text"}>{title}</div>
             <span>{ArrowIcon}</span>
           </a>
         </div>
