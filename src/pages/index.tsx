@@ -1,18 +1,23 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-import { Banner, Carousel, Markdown } from '../components';
-import contentItemService from '../services/ContentItemService';
+import { Banner, Carousel, Markdown } from "../components";
+import contentItemService from "../services/ContentItemService";
+import { getURLSearchParam } from "../utils/getURLSearchParam";
+
+const CONTENT_SUFFIX = getURLSearchParam("contentSuffix") ?? "";
 
 const componentLookup = {
-  'https://get-started-dashboard.com/banner-carousel': Carousel,
-  'https://schema-examples.com/banner-carousel': Carousel,
-  'https://amplience-examples.com/carousel': Carousel,
-  'https://get-started-dashboard.com/banner-schema': Banner,
-  'https://schema-examples.com/tutorial-banner': Banner,
-  'https://amplience-examples.com/banner': Banner,
-  'https://get-started-dashboard.com/hello-world-schema': Markdown,
-  'https://amplience-examples.com/hello-world': Markdown,
+  [`https://get-started-dashboard.com/banner-carousel${CONTENT_SUFFIX}`]:
+    Carousel,
+  [`https://examples.amplience.com/banner-carousel${CONTENT_SUFFIX}`]: Carousel,
+  [`https://examples.amplience.com/carousel${CONTENT_SUFFIX}`]: Carousel,
+  [`https://get-started-dashboard.com/banner-schema${CONTENT_SUFFIX}`]: Banner,
+  [`https://examples.amplience.com/tutorial-banner${CONTENT_SUFFIX}`]: Banner,
+  [`https://examples.amplience.com/banner${CONTENT_SUFFIX}`]: Banner,
+  [`https://get-started-dashboard.com/hello-world-schema${CONTENT_SUFFIX}`]:
+    Markdown,
+  [`https://examples.amplience.com/hello-world${CONTENT_SUFFIX}`]: Markdown,
 };
 
 export const Page = () => {
