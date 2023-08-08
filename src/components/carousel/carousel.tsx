@@ -1,4 +1,4 @@
-import {FC, HTMLAttributes, ReactNode} from "react";
+import { FC, HTMLAttributes, ReactNode } from "react";
 
 import { nanoid } from "nanoid";
 import { CarouselProvider, Dot, Slider, Slide } from "pure-react-carousel";
@@ -17,44 +17,39 @@ interface Props {
   banners: BannerComponent[];
 }
 
-export const Carousel: FC<Props> = (props) => {
-  const {
-    Wrapper = CarouselContainer,
-    loop = false,
-    navigationDots = true,
-    banners = [],
-  } = props;
-
-  return (
-    <Wrapper>
-      <CarouselProvider
-        naturalSlideWidth={100}
-        naturalSlideHeight={100}
-        visibleSlides={1}
-        totalSlides={banners.length}
-        infinite={loop}
-        isPlaying={loop}
-        interval={5000}
-      >
-        <Slider className="slider">
-          {banners.map((slide: any, index: number) => {
-            return (
-              <Slide key={index} index={index}>
-                <Banner {...slide} />
-              </Slide>
-            );
-          })}
-        </Slider>
-        <BackButton className={'backButton'} />
-        <NextButton  className={'nextButton'}/>
-        <nav>
-          {navigationDots &&
-            banners.map((slide: any, index: number) => (
-              <Dot key={nanoid()} slide={index} />
-            ))}
-        </nav>
-      </CarouselProvider>
-    </Wrapper>
-  );
-};
-
+export const Carousel: FC<Props> = ({
+  Wrapper = CarouselContainer,
+  loop = false,
+  navigationDots = true,
+  banners = [],
+}) => (
+  <Wrapper>
+    <CarouselProvider
+      naturalSlideWidth={100}
+      naturalSlideHeight={120}
+      visibleSlides={1}
+      totalSlides={banners.length}
+      infinite={loop}
+      isPlaying={loop}
+      interval={5000}
+    >
+      <Slider className="slider">
+        {banners.map((slide: any, index: number) => {
+          return (
+            <Slide key={index} index={index}>
+              <Banner {...slide} />
+            </Slide>
+          );
+        })}
+      </Slider>
+      <BackButton className={"backButton"} />
+      <NextButton className={"nextButton"} />
+      <nav>
+        {navigationDots &&
+          banners.map((slide: any, index: number) => (
+            <Dot key={nanoid()} slide={index} />
+          ))}
+      </nav>
+    </CarouselProvider>
+  </Wrapper>
+);

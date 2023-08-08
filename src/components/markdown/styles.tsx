@@ -1,68 +1,25 @@
 import styled from "@emotion/styled";
-import { CSSProperties } from "react";
 
 export const MarkdownWrapper = styled.div`
-  .wrapper {
-    width: auto;
-    height: fit-content;
-    font-size: 2.25rem;
-    background-color: #002C42;
-    padding: 28px 36px;
-    color: #ffffff;
-    font-weight: 500;
-    position: relative;
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
+  width: auto;
+  font-size: 1.5rem;
+  background-color: #002c42;
+  color: #ffffff;
+  font-weight: 500;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 354px;
+  padding: 28px 24px;
+
+  @media only screen and (min-width: 640px) {
     min-height: 768px;
-
-    .buttonText {
-      margin-left: 12px;
-    }
-
-    a {
-      width: 190px;
-    }
-
-    @media only screen and (max-width: 1024px) {
-      .githubButton {
-        left: 30px;
-        bottom: 30px;
-        top: inherit;
-      }
-    }
-  
-    @media only screen and (max-width: 640px) {
-      a {
-        width: 32px;
-      }
-
-      .githubButton {
-        width: 33px;
-        height: 32px;
-      }
-
-      .buttonText {
-        display: none;
-      }
-
-      span {
-        font-size: 1.5rem;
-      }
-
-      a {
-        top: 26px;
-      }
-    }
+    padding: 28px 36px;
+    font-size: 2.25rem;
   }
-
-  a {
-    position: absolute;
-    right: 30px;
-    top: 34px;
-    text-decoration: none;
-  }  
 
   .pendingContent {
     text-align: center;
@@ -82,5 +39,6 @@ export const MarkdownWrapper = styled.div`
   }
 `;
 
-
-export const buttonStyles: CSSProperties = { position: 'absolute' };
+export const MarkdownJsxWrapper = styled.div`
+  margin-bottom: 20px;
+`;

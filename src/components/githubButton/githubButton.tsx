@@ -1,13 +1,14 @@
-import { CSSProperties, FC } from 'react';
+import { FC, HTMLAttributes } from "react";
 
-import { GitHubIcon } from './consts';
-import styles from './GithubButton.module.css';
+import * as Styled from "./styles";
+import { GitHubIcon } from "./consts";
 
-export const GithubButton: FC<{ style: CSSProperties }> = ({ style }) => (
-  <a style={style} href="https://github.com/amplience/dc-visualization-get-started">
-    <div className={styles.githubButton}>
-      <span>{GitHubIcon}</span>
-      <span className="buttonText">Fork me on Github!</span>
-    </div>
-  </a>
+export const GithubButton: FC<HTMLAttributes<HTMLAnchorElement>> = (props) => (
+  <Styled.GithubButton
+    href="https://github.com/amplience/dc-visualization-get-started"
+    {...props}
+  >
+    {GitHubIcon}
+    <Styled.GithubButtonLabel>Fork me on Github!</Styled.GithubButtonLabel>
+  </Styled.GithubButton>
 );

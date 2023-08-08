@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
+import { GithubButton } from "../githubButton/githubButton";
 
 type ImageProps = {
   className: string;
@@ -10,215 +10,113 @@ export const BannerWrapper = styled.div<ImageProps>`
   margin: 0;
   height: 100%;
   overflow: hidden;
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+  display: grid;
+  min-height: 354px;
 
   aside {
-    padding: 1rem 2rem;
+    padding: 1.75rem 1.5rem;
     box-sizing: border-box;
     font-size: 1.2rem;
+    position: absolute;
 
     h1 {
-      font-size: 3rem;
-      line-height: 3rem;
+      font-size: 1.5rem;
+      line-height: 1.875rem;
       font-weight: 700;
       color: #fff;
+      margin: 0;
     }
 
     .subheader {
-      font-size: 1.25rem;
-      color: #fff;
-    }
-    a {
-      font-size: 1.2rem;
-      color: #fff;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    position: absolute;
-    right: 30px;
-    top: 28px;
-
-    svg {
-      margin-left: 12px;
-    }
-  }
-
-  .buttonText {
-    margin: 0 12px;
-  }
-
-  @media only screen and (max-width: 1024px) {
-    a {
-      width: 190px;
-      justify-content: center;
-      left: 30px;
-      bottom: 30px;
-      top: inherit;
-    }
-
-    aside {
-      h1 {
-        font-size: 36px;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 640px) {
-    a {
-      width: 33px;
-      height: 32px;
-      justify-content: center;
-    }
-    a svg {
-      margin-left: 0;
-    }
-    .buttonText {
-      display: none;
-      margin: 0;
-    }
-
-    aside {
-      h1 {
-        font-size: 24px;
-      }
-    }
-
-    .text {
-      width: 150px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       font-size: 0.875rem;
+      line-height: 1.1375rem;
+      color: #fff;
     }
   }
 
-  display: grid;
-  grid-template-columns: 1fr;
+  @media only screen and (min-width: 640px) {
+    min-height: 550px;
 
-  aside {
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    padding: 28px 36px;
-    box-sizing: border-box;
-    color: inherit;
+    aside {
+      padding: 1.75rem 2.25rem;
 
-    h1 {
-      font-size: 4vw;
-      line-height: 4vw;
-      margin: 0;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 36px;
-      line-height: 46px;
-      margin-bottom: 24px;
-    }
+      h1 {
+        font-size: 2.25rem;
+        line-height: 2.875rem;
+      }
 
-    p {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 26px;
-      margin: 0;
+      .subheader {
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+      }
     }
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (min-width: 1024px) {
+    min-height: 768px;
+
     aside {
       h1 {
-        font-size: 36px;
-        margin-bottom: 10px;
-      }
-      .subheader {
-        font-size: 20px;
+        padding-right: 190px;
       }
     }
   }
+`;
 
-  @media only screen and (max-width: 640px) {
-    aside {
-      padding: 28px 24px;
-      h1 {
-        font-size: 24px;
-        line-height: 30px;
-      }
-      .subheader {
-        font-size: 14px;
-        line-height: 18px;
-      }
-    }
+export const BannerActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.75rem 1.5rem;
+  gap: 12px;
+  pointer-events: none;
+
+  @media only screen and (min-width: 640px) {
+    padding: 1.75rem 2.25rem;
   }
 
-  .button {
-    background: rgba(26, 34, 45, 0.75);
-    border-radius: 25px;
-    position: relative;
-    margin-left: auto;
-    margin-top: -2.4rem;
-    right: 30px;
-    padding: 0;
-    width: 322px;
-    display: flex;
-    height: 38px;
-    bottom: 28px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .button .link {
-    display: flex;
-    position: absolute;
-    font-size: 1.25rem;
-    width: 305px;
-    bottom: 6px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  @media only screen and (min-width: 1024px) {
     top: 0;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+    flex-direction: column;
   }
+`;
 
-  @media only screen and (max-width: 640px) {
-    .button { 
-      width: 200px;
-      height: 30px;
-      bottom: 22px;
-    }
-    .button .link {
-      width: 180px;
-      font-size: 1rem;
-    }
-    .link {
-      font-size: 14px;
-      line-height: 18px;
-    }
+export const BannerGithubButton = styled(GithubButton)`
+  pointer-events: auto;
+`;
 
-    .link span {
-      margin-left: 8px;
-    }
-  }
+export const BannerCta = styled.a`
+  background: rgba(26, 34, 45, 0.75);
+  border-radius: 25px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  gap: 8px;
+  min-width: 1px;
+  font-size: 14px;
+  font-weight: 400;
+  pointer-events: auto;
 
-  .link {
-    font-style: normal;
-    font-weight: 400;
+  @media only screen and (min-width: 640px) {
     font-size: 20px;
-    line-height: 26px;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-
-    span {
-      display: flex;
-      align-items: center;
-    }
+    padding: 12px;
   }
+
+  @media only screen and (min-width: 1024px) {
+    max-width: calc(100% - 1.75rem);
+  }
+`;
+
+export const BannerCtaLabel = styled.div`
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;

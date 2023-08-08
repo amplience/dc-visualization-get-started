@@ -63,7 +63,7 @@ export const CarouselContainer = styled.div`
     .slideInner,
     .slider,
     .carousel__inner-slide {
-      max-height: 320px;
+      max-height: 354px;
     }
 
     @media only screen and (min-width: 640px) {
@@ -71,7 +71,7 @@ export const CarouselContainer = styled.div`
       .slider,
       .slideInner,
       .carousel__inner-slide {
-        max-height: 488px;
+        max-height: 550px;
       }
     }
 
@@ -80,7 +80,7 @@ export const CarouselContainer = styled.div`
       .slider,
       .slideInner,
       .carousel__inner-slide {
-        max-height: 500px;
+        max-height: 768px;
       }
     }
   }
