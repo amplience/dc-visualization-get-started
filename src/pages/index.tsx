@@ -18,6 +18,8 @@ const componentLookup = {
   [`https://get-started-dashboard.com/hello-world-schema${CONTENT_SUFFIX}`]:
     Markdown,
   [`https://examples.amplience.com/hello-world${CONTENT_SUFFIX}`]: Markdown,
+  "https://schema-examples.com/banner-carousel": Carousel,
+  "https://schema-examples.com/tutorial-banner": Banner,
 };
 
 export const Page = () => {
